@@ -1,0 +1,73 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* heading- login */
+.RegisterForm h2{
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+/* Login form -right side */
+.RegisterForm{
+    width: 50%;
+    max-width: 400px;
+    background-color: white;
+    padding: 40px;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px black;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+}
+.RegisterInput{
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 5px 10px 5px 10px;
+}
+/* Icons */
+.RegisterInput-icon{
+    color: black;
+    margin-left: 10px ;
+}
+/* Login btn */
+.Register-btn{
+    background-color: green;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin: 10px;
+    /* width: 20%; */
+    cursor: pointer;
+}
+.Register-btn:hover{
+    background-color: white;
+    color: green;
+}
+/* Responsiveness design */
+@media screen and (max-width: 650px) {
+    .RegisterForm{
+        width: 90%;
+        max-width: 300px;
+        padding: 30px;
+    }
+    .RegisterInput{
+        margin-bottom: 15px;
+        border-radius: 5px;
+    }
+    /* Icons */
+    .RegisterInput-icon{
+        margin-left: 0px ;
+    }
+    .Register-btn{
+        margin: 10px;
+        width: 80%;
+        text-align: center;
+        padding: 5px;
+    }
+}
+

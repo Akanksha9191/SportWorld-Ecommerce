@@ -1,0 +1,115 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Login page container */
+.Login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blue; */
+    flex-wrap: wrap;
+    height: 100vh;
+    gap: 20vh;
+}
+/* heading- login */
+.Login-container h2{
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+/* Image - left side */
+.LoginImg{
+    /* flex: 1; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.LoginImg-style{
+    width: 100vh;
+    height: 100vh;
+    max-width: 400px;
+    border-radius: 10px;
+}
+/* Login form -right side */
+.LoginForm{
+    width: 50%;
+    max-width: 400px;
+    background-color: white;
+    padding: 40px;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px black;
+    text-align: center;
+}
+.LoginInput{
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 5px 10px 5px 10px;
+}
+/* Icons */
+.LoginInput-icon{
+    color: black;
+    margin-left: 10px ;
+}
+/* Login btn */
+.login-btn{
+    background-color: green;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin: 10px;
+    /* width: 20%; */
+    cursor: pointer;
+}
+.login-btn:hover{
+    background-color: white;
+    color: green;
+}
+/* Responsiveness design */
+
+@media screen and (max-width: 1024px) {
+    .Login-container{
+        flex-direction: column;
+        height: auto;
+        gap: 8vh;
+    }
+    .LoginImg-style{
+        width: 80vh;
+        height: 80vh;
+        max-width: 400px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .Login-container{
+        flex-direction: column;
+        height: auto;
+        gap: 8vh;
+    }
+    .LoginImg-style{
+        width: 60vh;
+        height: 60vh;
+        max-width: 300px;
+    }
+    .LoginForm{
+        width: 90%;
+        max-width: 300px;
+        padding: 30px;
+    }
+    .LoginInput{
+        margin-bottom: 15px;
+        border-radius: 5px;
+    }
+    /* Icons */
+    .LoginInput-icon{
+        margin-left: 0px ;
+    }
+    .login-btn{
+        margin: 10px;
+        width: 50%;
+        text-align: center;
+        padding: 5px;
+    }
+}
+
