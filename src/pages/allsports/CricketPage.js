@@ -1,4 +1,3 @@
-import axios from "axios";
 import LogoComp from "../../components/LogoComp";
 import NavbarComp from "../../components/Navbar";
 import Button from 'react-bootstrap/Button';
@@ -10,6 +9,7 @@ import Row from 'react-bootstrap/Row';
 import FooterComp from "../../components/FooterComp";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { Get, Post } from "../../components/http.service";
 
 
 const CricketPage = ()=>{
@@ -24,8 +24,7 @@ const CricketPage = ()=>{
     }, [])
 
     const FetchData = ()=>{
-        axios
-        .get("http://localhost:8888/cricketProduct")
+        Get('http://localhost:8888/cricketProduct')
         .then((res)=>{
             setcricket(res.data)
         })
@@ -35,9 +34,10 @@ const CricketPage = ()=>{
     }
 
     const addToCart = (Cardproduct) => {
-    console.log(Cardproduct)  // axios
-    axios.post("http://localhost:8888/cardItems",Cardproduct).then(()=>{
-        window.alert("product added into cart")
+    console.log(Cardproduct)
+    Post('http://localhost:8888/cardItems', Cardproduct)
+    .then(()=>{
+        window.alert("Product added into cart")
     }).catch((error)=>{
         console.log("Failed to add/update product in cart.", error);
     })
@@ -49,10 +49,11 @@ const CricketPage = ()=>{
             {/* Navigation var */}
             <LogoComp/>
             <NavbarComp/>
+            
             <div className="p-4" style={{marginTop:'160px'}}>
             <h1 
-            className="text text-center m-2" 
-            style={{color:'darkblue', fontWeight:"bold"}}
+            className="text text-center fw-bold m-2" 
+            style={{color:'darkblue'}}
             >
                 Cricket
             </h1>

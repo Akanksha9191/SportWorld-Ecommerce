@@ -3,8 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
-import { Image } from 'react-bootstrap';
+import { Image, NavDropdown } from 'react-bootstrap';
 import ImageComp from './ImageComp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -38,7 +37,7 @@ const LogoComp = ()=>{
           }} 
           >
           <Container fluid >
-            <Navbar.Brand href="#" >
+            <Navbar.Brand>
                               {/* Logo image */}
                               <Image
                                width={60}
@@ -68,14 +67,15 @@ const LogoComp = ()=>{
 
                 {/* Social media account */}
         <Nav className="me-auto">
-            <Nav.Link href="https://www.instagram.com/" variant="black"><InstagramIcon className="fs-3" /></Nav.Link>
-            <Nav.Link href="https://www.facebook.com/"><FacebookIcon className="fs-3"/></Nav.Link>
-            <Nav.Link href="https://in.pinterest.com/"><PinterestIcon className="fs-3"/></Nav.Link>
+            <Nav.Item as={Link} to="https://www.instagram.com/"  className='link-dark mx-3'><InstagramIcon className="fs-3"/></Nav.Item>
+            <Nav.Item as={Link} to="https://www.facebook.com/"  className='link-dark mx-3'><FacebookIcon className="fs-3"/></Nav.Item>
+            <Nav.Item as={Link} to="https://in.pinterest.com/"  className='link-dark mx-3'><PinterestIcon className="fs-3"/></Nav.Item>
           </Nav>
         {/* Account , add cart */}
           <Nav className="">
-            <Nav.Link as={Link} to={"/"}><AccountBoxIcon className="fs-1" /></Nav.Link>
-            <Nav.Link as={Link} to={"/cart"}><ShoppingCartIcon className="fs-1" /></Nav.Link>
+            <Nav.Item as={Link} to={"/"} className='link-dark'><AccountBoxIcon className="fs-1" />
+            </Nav.Item>
+            <Nav.Item as={Link} to={'/cart'} className='link-dark mx-2'><ShoppingCartIcon className="fs-1" /></Nav.Item>
           </Nav>
             </Navbar.Collapse>
           </Container>

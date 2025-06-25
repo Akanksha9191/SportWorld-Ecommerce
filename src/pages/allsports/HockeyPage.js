@@ -12,7 +12,7 @@ import { Get, Post } from "../../components/http.service";
 
 
 
-const FootballPage = ()=>{
+const HockeyPage = ()=>{
   
     // Fetching data
     const[footballdata, setfootball]= useState([])
@@ -22,7 +22,7 @@ const FootballPage = ()=>{
     }, [])
 
     const FetchData = ()=>{
-        Get(`http://localhost:8888/footballProduct`)
+        Get(`http://localhost:8888/hockeyProduct`)
         .then((res)=>{
             setfootball(res.data)
         })
@@ -58,23 +58,23 @@ const FootballPage = ()=>{
             
            <div className="p-3">
              <Row xs={1} md={4} className="g-4 mb-4">
-                {footballdata.map((footballitems, idx) => (
+                {footballdata.map((hockey_items, idx) => (
                     <Col key={idx}>
                         <Card style={{ height:'100%',
                             display:'flex',
                             flexDirection:'column',
                             justifyContent:'space-between',
                             textAlign:'center'}}>
-                            <Card.Img variant="top" style={{padding:"10px", width:'70%', margin:'auto', height:'200px'}} src={footballitems.url} />
+                            <Card.Img variant="top" style={{padding:"10px", width:'70%', margin:'auto', height:'200px'}} src={hockey_items.url} />
                             <Card.Body>
-                                <Card.Title>{footballitems.title}</Card.Title>
+                                <Card.Title>{hockey_items.title}</Card.Title>
                                 <Card.Text>
-                                    {footballitems.description}
+                                    {hockey_items.description}
                                 </Card.Text>
-                                <Card.Title>₹{footballitems.price}</Card.Title>
+                                <Card.Title>₹{hockey_items.price}</Card.Title>
                                 <Button variant="dark" 
                                 className="mt-auto"
-                                onClick={()=>addToCart(footballitems)} 
+                                onClick={()=>addToCart(hockey_items)} 
                                 >Add to Cart</Button>
                             </Card.Body>
                         </Card>
@@ -86,4 +86,4 @@ const FootballPage = ()=>{
         </div>
     )
 }
-export default FootballPage;
+export default HockeyPage;

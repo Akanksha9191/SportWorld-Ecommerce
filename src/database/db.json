@@ -83,60 +83,60 @@
   ],
   "mostpopularProduct": [
     {
-      "id": "1088",
+      "id": "mp1088",
       "url": "https://vescocycles.com/cdn/shop/files/01.jpg?v=1708425722",
       "title": "Vesco Cycles1",
       "description": "VESCO 24-T Drift Cycle Mountain Bike (Grey)",
-      "price": "4,999"
+      "price": "4999"
     },
     {
-      "id": "1089",
+      "id": "mp1089",
       "url": "https://contents.mediadecathlon.com/p2571076/b9d48291bb6811c5899b09117d54be44/p2571076.jpg?format=auto&quality=70&f=2520x0",
       "title": "Kispeta",
       "description": "Thermobonded Size 5 FIFA Quality Football Pro Ball",
-      "price": "3,399"
+      "price": "3399"
     },
     {
-      "id": "1090",
+      "id": "mp1090",
       "url": "https://shop.teamsg.in/cdn/shop/files/7_b9c86a63-f610-41db-97f8-7ba614c5fe87.png?v=1745408453&width=1946",
       "title": "Cricket Bat",
       "description": "SG HP Impluse English Willow Cricket Bat (Hardik Pandya Series) – TeamSG",
-      "price": "4,990"
+      "price": "4990"
     },
     {
-      "id": "1091",
+      "id": "mp1091",
       "url": "https://cdn.shopify.com/s/files/1/0603/3031/1875/products/main-square_dbf2777b-c93d-4a3f-bfdb-31e269293a7f_540x.jpg?=75&v=1696314181",
       "title": "Adidas Originals ULTRABOOST 1.0",
       "description": "Adidas Ultraboost 1.0 shoes are designed to keep you comfortable.",
-      "price": "14,199"
+      "price": "14199"
     },
     {
-      "id": "1092",
+      "id": "mp1092",
       "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEtjWDK8vUDDi0FcDvZMYFxJm9sLlCnOkUqg&s",
       "title": "SkateBoard",
       "description": "ChromeWheels 31 inch Skateboard Double Kick Skate Board Cruiser Longboard 8 Layer",
-      "price": "6,009"
+      "price": "6009"
     },
     {
-      "id": "1093",
+      "id": "mp1093",
       "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkxe00ca8ujgDViJz3eQaQfEPB6YLC1IjlbQ&s",
       "title": "The Flexibell",
       "description": "Flexnest Flexibell - Pair With Stand - Adjustable Dumbbell Set for Home Gym",
-      "price": "24,999"
+      "price": "24999"
     },
     {
-      "id": "1094",
+      "id": "mp1094",
       "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSotjrtyF49_UyOHYPoHDYxSsHpMA79m3ZuNQ&s",
       "title": "Tennis Racquet",
       "description": "Adidas Originals ULTRABOOST 1.0",
-      "price": "2,999"
+      "price": "2999"
     },
     {
-      "id": "1095",
+      "id": "mp1095",
       "url": "https://m.media-amazon.com/images/I/51X563OjJvL._SX300_SY300_QL70_FMwebp_.jpg",
       "title": "BULLAR Steel Home Gym Set",
       "description": "5Ft Straight Rod, Curl bar, (10kg-70Kg) Steel Weight Plates Combo, Gym Equipment.",
-      "price": "4,999"
+      "price": "4999"
     }
   ],
   "footballProduct": [
@@ -197,6 +197,64 @@
       "price": "920"
     }
   ],
+  "hockeyProduct": [
+    {
+      "id": "h01",
+      "url": "src/assets/hockey/compositehockeystick.webp",
+      "title": "Composite Hockey Stick",
+      "description": "A L F A Limited Edition Composite Hockey Stick (Scoop Bend, 37 INCHES)",
+      "price": "2649"
+    },
+    {
+      "id": "h02",
+      "url": "src/assets/hockey/graystouchhockey.webp",
+      "title": "Grays Touch Hockey Glove ",
+      "description": "GRAYS Black Left Medium Outdoor Field Hockey Gloves | Touch (Fingerless)",
+      "price": "4800"
+    },
+    {
+      "id": "h03",
+      "url": "src/assets/hockey/hockeyequipment.webp",
+      "title": "HTFX Hockey Tower 33 inch Equipment Bag",
+      "description": "Equipment shelf, foot carpet, mesh door accessory pockets and removeable wet/dry mesh bag",
+      "price": "5049"
+    },
+    {
+      "id": "h04",
+      "url": "src/assets/hockey/hockeystick.webp",
+      "title": "Hockey Stick",
+      "description": "GRAYS AC6 Dynabow-S Hockey Stick (2023/24) - 37.5 inch Light",
+      "price": "7000"
+    },
+    {
+      "id": "h05",
+      "url": "src/assets/hockey/lazerieldhockey.webp.webp",
+      "title": "GRYPHON GXXII Lazer Field Hockey Stick",
+      "description": "A regular bow has the highest point of the bow placed in the midsection or center of the shaft, assisting in every skill of the gam",
+      "price": "2199"
+    },
+    {
+      "id": "h06",
+      "url": "src/assets/hockey/stickhandling.webp",
+      "title": "Hockey Revolution Stickhandling ",
+      "description": "Hockey Revolution Stickhandling Training Aid Equipment for Puck Control Reaction Time and Coordination - MY ENEMY",
+      "price": "8099"
+    },
+    {
+      "id": "h07",
+      "url": "src/assets/hockey/streethockey.webp",
+      "title": "Hockey Stick",
+      "description": "Franklin Sports Youth Street Hockey Set Includes 2 Hockey Sticks and 1 Ball",
+      "price": "6649"
+    },
+    {
+      "id": "h08",
+      "url": "src/assets/hockey/hotbottlecover.webp",
+      "title": "'Field Hockey Equipment' Hot Water Bottle Cover",
+      "description": "Fits a standard 2 litre hot water bottle Cover only, Water bottle NOT included",
+      "price": "2649"
+    }
+  ],
   "menwomenShoesProduct": [
     {
       "id": "ms1",
@@ -255,7 +313,7 @@
       "price": "1,730"
     }
   ],
-   "kidsShoesProduct": [
+  "kidsShoesProduct": [
     {
       "id": "ks1",
       "url": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcREGqtp-YYJUtbYD6ShIVu7GHNbEIZTN3TfCqVSDDdr_VyVZF74WbjTYT8AX33ox5lhpipW0pw2ZoP-E-WJwQzGOMdmaLmAjJ10BQGH4bYgH4wqjzIILGfsNSw",
@@ -313,30 +371,7 @@
       "price": "₹1,730"
     }
   ],
-
   "cardItems": [
-    {
-      "id": "103",
-      "url": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT8F6Vses-BZ8qrlHrkQWbKdd1iqGNfmuMcWBCkoweVWGLQJ79pRoju9YQx3V5ivv0VHY1koW0GQ61V-Azb0ARFQGbK1gN9u0qxsLLsUR_-cKMprGqLIKXd0w&usqp=CAE",
-      "title": "Ram Cricket Crazy Cricket Sets Senior",
-      "description": "Performance & Durable Kwik Cricket Style Set for Training, Cricket Matches, Garden, Beach, or Park",
-      "price": "13999"
-    },
-    {
-      "id": "103",
-      "url": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT8F6Vses-BZ8qrlHrkQWbKdd1iqGNfmuMcWBCkoweVWGLQJ79pRoju9YQx3V5ivv0VHY1koW0GQ61V-Azb0ARFQGbK1gN9u0qxsLLsUR_-cKMprGqLIKXd0w&usqp=CAE",
-      "title": "Ram Cricket Crazy Cricket Sets Senior",
-      "description": "Performance & Durable Kwik Cricket Style Set for Training, Cricket Matches, Garden, Beach, or Park",
-      "price": "13999"
-    },
-    {
-      "id": "101",
-      "url": "https://cdn.fcglcdn.com/brainbees/images/products/583x720/19862692a.webp",
-      "title": "Cricket Bat",
-      "description": "Jaspo SLOG Plastic Tennis Cricket Bat Full Size Bat (34” X 4.5” inch) for All Age Group (SLOG Cricket BAT)",
-      "price": "410",
-      "sport": "Cricket"
-    },
     {
       "id": "104",
       "url": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQVaeUzqOrApO4JYzoqjxQUIKP4PjENzC-yZMbVRmQEc5jBLQmw4VyYKzz5ZpNVtvhm5mIbf3HmYw9o9igoZura4YUXUN1IhmxqNb3MM0vLbAFyQF8rsHnnqA&usqp=CAE",
@@ -345,20 +380,33 @@
       "price": "2299"
     },
     {
-      "id": "101",
-      "url": "https://cdn.fcglcdn.com/brainbees/images/products/583x720/19862692a.webp",
-      "title": "Cricket Bat",
-      "description": "Jaspo SLOG Plastic Tennis Cricket Bat Full Size Bat (34” X 4.5” inch) for All Age Group (SLOG Cricket BAT)",
-      "price": "410",
+      "id": "102",
+      "url": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSSUQ0FnG-1tyix1MJFY7iUJv2sthXtDkGdcwIQhh7bV_rA3sH4Pb65B1LBFyyTnotcpM6ncljoHwr9nkW310Q2O_ycOX-1KGV46Ch-KFyHD_pMR3V0PZV9Gw&usqp=CAE",
+      "title": "JASPO Slog Engraver Cricket Kit",
+      "description": "JASPO Slog Engraver Cricket Kit Full Size Plastic Bat, Synthetic Ball, Stumps & Kit Bag",
+      "price": "2099",
       "sport": "Cricket"
     },
     {
-      "id": "101",
-      "url": "https://cdn.fcglcdn.com/brainbees/images/products/583x720/19862692a.webp",
-      "title": "Cricket Bat",
-      "description": "Jaspo SLOG Plastic Tennis Cricket Bat Full Size Bat (34” X 4.5” inch) for All Age Group (SLOG Cricket BAT)",
-      "price": "410",
-      "sport": "Cricket"
+      "id": "106",
+      "url": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQwS8B3Id7Ad7c_o2wNMGO1zZn5awgZbD54109auK11FCE8IyZOTwwDleijNJ9Qf5_h1P48UEel-ehE2CJzzG1dARouNEmmvdTaLIRLZjkPK33Eimeewev-Ug&usqp=CAE",
+      "title": "Cricket Set",
+      "description": "Cricket Bat, Ball, 4 Stumps, Bails and Bag, Size 3 Bat",
+      "price": "4399"
+    },
+    {
+      "id": "f2",
+      "url": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQLRN1h8k--ugwtuZSA9bIVJuZ5J7bOcmstR-apsIX74sdVBspbIl6Klul8zv7yHQ5x1mY9JlAM5zHNSPQv1-U9YqbNgPka676YGK6EvNhkesOFxxqC4d2pIw",
+      "title": "COSCO PREMIER Football",
+      "description": "Synthetic Hand Sewn Ball Surfacedurable top cover excellent shape stability.",
+      "price": "529"
+    },
+    {
+      "id": "f2",
+      "url": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQLRN1h8k--ugwtuZSA9bIVJuZ5J7bOcmstR-apsIX74sdVBspbIl6Klul8zv7yHQ5x1mY9JlAM5zHNSPQv1-U9YqbNgPka676YGK6EvNhkesOFxxqC4d2pIw",
+      "title": "COSCO PREMIER Football",
+      "description": "Synthetic Hand Sewn Ball Surfacedurable top cover excellent shape stability.",
+      "price": "529"
     }
   ]
 }

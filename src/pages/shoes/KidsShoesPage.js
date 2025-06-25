@@ -8,23 +8,22 @@ import { useEffect, useState } from "react";
 import Row from 'react-bootstrap/Row';
 import FooterComp from "../../components/FooterComp";
 import { Get, Post } from "../../components/http.service";
+import ImageComp from "../../components/ImageComp";
 
 
-
-
-const FootballPage = ()=>{
+const KidsShooesPage = ()=>{
   
     // Fetching data
-    const[footballdata, setfootball]= useState([])
+    const[kidshoesdata, setkidshoes]= useState([])
 
     useEffect(()=>{
         FetchData()
     }, [])
 
     const FetchData = ()=>{
-        Get(`http://localhost:8888/footballProduct`)
+        Get(`http://localhost:8888/kidsShoesProduct`)
         .then((res)=>{
-            setfootball(res.data)
+            setkidshoes(res.data)
         })
         .catch((error)=>{
             console.log(error)
@@ -42,7 +41,7 @@ const FootballPage = ()=>{
     }
 
     return(
-        <div>
+        <div >
             
             {/* Navigation var */}
             <LogoComp/>
@@ -52,29 +51,29 @@ const FootballPage = ()=>{
             className="text text-center fw-bold m-2" 
             style={{color:'darkblue'}}
             >
-                Football
+                Kids Sport Shoes
             </h1>
             </div>
-            
-           <div className="p-3">
+
+           <div className="p-3" >
              <Row xs={1} md={4} className="g-4 mb-4">
-                {footballdata.map((footballitems, idx) => (
+                {kidshoesdata.map((kidshoes_items, idx) => (
                     <Col key={idx}>
                         <Card style={{ height:'100%',
                             display:'flex',
                             flexDirection:'column',
                             justifyContent:'space-between',
                             textAlign:'center'}}>
-                            <Card.Img variant="top" style={{padding:"10px", width:'70%', margin:'auto', height:'200px'}} src={footballitems.url} />
+                            <Card.Img variant="top" style={{padding:"10px", width:'70%', margin:'auto', height:'200px'}} src={kidshoes_items.url} />
                             <Card.Body>
-                                <Card.Title>{footballitems.title}</Card.Title>
+                                <Card.Title>{kidshoes_items.title}</Card.Title>
                                 <Card.Text>
-                                    {footballitems.description}
+                                    {kidshoes_items.description}
                                 </Card.Text>
-                                <Card.Title>₹{footballitems.price}</Card.Title>
+                                <Card.Title>₹{kidshoes_items.price}</Card.Title>
                                 <Button variant="dark" 
                                 className="mt-auto"
-                                onClick={()=>addToCart(footballitems)} 
+                                onClick={()=>addToCart(kidshoes_items)} 
                                 >Add to Cart</Button>
                             </Card.Body>
                         </Card>
@@ -86,4 +85,4 @@ const FootballPage = ()=>{
         </div>
     )
 }
-export default FootballPage;
+export default KidsShooesPage;

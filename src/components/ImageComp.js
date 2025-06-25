@@ -17,6 +17,16 @@ import Tennis from '../assets/images/Tennis.webp'
 import OnlineShop from '../assets/images/shoponline.png'
 import Freeshipping from '../assets/images/freeshipping.png'
 import SecureShopping from '../assets/images/secureshopping.png'
+//kids shoes
+import KidsShoesBG from '../assets/images/kidsShoes_bg.jpg'
+import Kidbanner from '../assets/kids/kids_banner.jpeg'
+//men/women shoes 
+import Menbanner from '../assets/men shoes/menshoes_banner.webp'
+//criket
+import CricketBanner from '../assets/cricket/cricket_banner.jpg'
+//
+// football
+import FootballBanner from '../assets/football/banner-football.jpg'
 const ImageComp = {
     Logo,
     LoginFootball,
@@ -40,8 +50,21 @@ const ImageComp = {
     // about us comp
     OnlineShop,
     Freeshipping,
-    SecureShopping
+    SecureShopping,
 
+    //kids shoes page
+    KidsShoesBG,
+    Kidbanner,
+
+    //men shoes page
+    Menbanner,
+
+    //cricket
+    CricketBanner,
+
+
+    //football
+    FootballBanner
 
 
 

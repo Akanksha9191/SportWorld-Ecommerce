@@ -1,4 +1,3 @@
-import axios from "axios";
 import LogoComp from "../../components/LogoComp";
 import NavbarComp from "../../components/Navbar";
 import Button from 'react-bootstrap/Button';
@@ -9,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 import FooterComp from "../../components/FooterComp";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { Get, Post } from "../../components/http.service";
 
 const MenWomenShoesPage=()=>{
     // Fetching data
@@ -19,8 +19,7 @@ const MenWomenShoesPage=()=>{
     }, [])
 
     const FetchData = ()=>{
-        axios
-        .get("http://localhost:8888/menwomenShoesProduct")
+        Get(`http://localhost:8888/menwomenShoesProduct`)
         .then((res)=>{
             setmenshoes(res.data)
         })
@@ -30,8 +29,8 @@ const MenWomenShoesPage=()=>{
     }
 
     const addToCart = (Cardproduct) => {
-    console.log(Cardproduct)  // axios
-    axios.post("http://localhost:8888/cardItems",Cardproduct)
+    console.log(Cardproduct)
+    Post(`http://localhost:8888/cardItems/${Cardproduct}`)
     .then(()=>{
         window.alert("product added into cart")
     })
@@ -45,15 +44,15 @@ const MenWomenShoesPage=()=>{
             <NavbarComp/>
             <div className="p-4" style={{marginTop:'160px'}}>
             <h1 
-            className="text text-center m-2" 
-            style={{color:'darkblue', fontWeight:"bold"}}
+            className="text text-center m-2 fw-bold" 
+            style={{color:'darkblue'}}
             >
             Men/Women Sport Shoes
             </h1>
             </div>
            <div className="p-3">
              <Row xs={1} md={4} className="g-4 mb-4">
-                {menshoesdata.map((ms_items, idx) => (
+                {menshoesdata.map((menshoes_items, idx) => (
                     <Col key={idx}>
                         <Card style={{ 
                             height:'100%',
@@ -61,17 +60,17 @@ const MenWomenShoesPage=()=>{
                             flexDirection:'column',
                             justifyContent:'space-between',
                             textAlign:'center'}}>
-                            <Card.Img variant="top" style={{padding:"10px", width:'70%', margin:'auto', height:'200px'}} src={items.url} />
+                            <Card.Img variant="top" style={{padding:"10px", width:'70%', margin:'auto', height:'200px'}} src={menshoes_items.url} />
                             <Card.Body>
-                                <Card.Title>{ms_items.title}</Card.Title>
+                                <Card.Title>{menshoes_items.title}</Card.Title>
                                 <Card.Text>
-                                    {ms_items.description}
+                                    {menshoes_items.description}
                                 </Card.Text>
-                                <Card.Title>₹{ms_items.price}</Card.Title>
+                                <Card.Title>₹{menshoes_items.price}</Card.Title>
                                 <Button 
                                 variant="dark" 
                                 className="mt-auto"
-                                onClick={()=>addToCart(ms_items)} 
+                                onClick={()=>addToCart(menshoes_items)} 
                                 >Add to Cart</Button>
                             </Card.Body>
                         </Card>

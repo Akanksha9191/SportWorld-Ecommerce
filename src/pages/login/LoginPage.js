@@ -1,7 +1,6 @@
 //images
 import ImageComp from "../../components/ImageComp";
 import { useRef, useState } from "react";
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { Image } from "react-bootstrap";
 // Icons
@@ -9,6 +8,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import LockIcon from '@mui/icons-material/Lock';
 //apply css
 import '../login/LoginPage.css'
+import { Get } from "../../components/http.service";
 
 const LoginPage = () =>{
   const Navigate = useNavigate()
@@ -17,8 +17,7 @@ const LoginPage = () =>{
 
     const [user, setuser] = useState([])
     useState(()=>{
-      axios
-      .get("http://localhost:8888/logindata")
+      Get(`http://localhost:8888/logindata`)
       .then((res)=>{
         console.log(res.data)
         setuser(res.data)
@@ -41,6 +40,7 @@ const LoginPage = () =>{
       )
       if(currentData){
         alert("Login Successfully..!")
+        sessionStorage.setItem("isLogin","true")
         Navigate("/online-sports-store")
       }else{
         alert("Inalid credential")

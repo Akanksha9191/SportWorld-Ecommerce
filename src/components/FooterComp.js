@@ -6,6 +6,7 @@ import PinterestIcon from '@mui/icons-material/Pinterest';// Icons for social me
 import LocationOnIcon from '@mui/icons-material/LocationOn';// Icon for location
 import PhoneIcon from '@mui/icons-material/Phone'; //Icon for phone
 import EmailIcon from '@mui/icons-material/Email'; // Icon for email
+import { Link } from "react-router-dom";
 
 const FooterComp = () => {
   return (
@@ -26,9 +27,9 @@ const FooterComp = () => {
           <Col md={2}>
             <h5>Follow Us</h5>
             <div className="d-flex gap-3">
-              <a href="#" className="text-light text-decoration-none"><FacebookIcon size={20} /></a>
-              <a href="#" className="text-light text-decoration-none"><InstagramIcon size={20} /></a>
-              <a href="#" className="text-light text-decoration-none"><PinterestIcon size={20} /></a>
+              <p href="#" className="text-light text-decoration-none"><FacebookIcon size={20} /></p>
+              <p href="#" className="text-light text-decoration-none"><InstagramIcon size={20} /></p>
+              <p href="#" className="text-light text-decoration-none"><PinterestIcon size={20} /></p>
             </div>
           </Col>
 
@@ -36,10 +37,10 @@ const FooterComp = () => {
           <Col md={2}>
             <h5 className="">Quick Links</h5>
             <ul className="list-unstyled">
-              <li><a href="#" className="text-light text-decoration-none">About</a></li>
-              <li><a href="#" className="text-light text-decoration-none">Contact</a></li>
-              <li><a href="#" className="text-light text-decoration-none">Discover Us</a></li>
-              <li><a href="#" className="text-light text-decoration-none">My Account</a></li>
+              <li><Link to={"/aboutus"} className="text-light text-decoration-none">About</Link></li>
+              <li><Link to={"/contactus"} className="text-light text-decoration-none">Contact</Link></li>
+              <li><Link to={"/aboutus"} className="text-light text-decoration-none">Discover Us</Link></li>
+              <li><Link to={""} className="text-light text-decoration-none">My Account</Link></li>
             </ul>
           </Col>
 
@@ -47,9 +48,9 @@ const FooterComp = () => {
           <Col md={2}>
             <h5>Help</h5>
             <ul className="list-unstyled">
-              <li><a href="#" className="text-light text-decoration-none">Frequently Asked Questions</a></li>
-              <li><a href="#" className="text-light text-decoration-none">Terms & Conditions</a></li>
-              <li><a href="#" className="text-light text-decoration-none">Returns & Exchanges</a></li>
+              <li><Link className="text-light text-decoration-none">Frequently Asked Questions</Link></li>
+              <li><Link className="text-light text-decoration-none">Terms & Conditions</Link></li>
+              <li><Link className="text-light text-decoration-none">Returns & Exchanges</Link></li>
             </ul>
           </Col>
            <hr style={{ backgroundColor: "white" }} />
@@ -67,10 +68,10 @@ const FooterComp = () => {
             </Col>
             <Col md={3}>
             <p><strong><PhoneIcon/> </strong> 99952 23123</p>
-            <p><strong><EmailIcon/> </strong> <a href="mailto:bakanksha346@gmail.com" className="text-light">info@sportworldpune.com</a></p> 
+            <p><strong><EmailIcon/> </strong> <Link to="mailto:bakanksha346@gmail.com" className="text-light">info@sportworldpune.com</Link></p> 
             </Col>
             <Col md={3}>
-            <p><strong>Order Queries:</strong> <a href="mailto:bakanksha346@gmail.com" className="text-light">orders@sportworldpune.com</a></p>
+            <p><strong>Order Queries:</strong> <Link to="mailto:bakanksha346@gmail.com" className="text-light">orders@sportworldpune.com</Link></p>
             </Col>
             
         </Row>

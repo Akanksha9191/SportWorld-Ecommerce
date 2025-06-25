@@ -12,11 +12,12 @@ const AboutusPage = ()=>{
             <NavbarComp/>
             <div className="p-4" style={{marginTop:'160px'}}>
             <h1 
-            className="text text-center m-2" 
-            style={{color:'darkblue', fontWeight:"bold"}}
+            className="text text-center fw-bold m-2 mb-4" 
+            style={{color:'darkblue'}}
             >
                 Our Story
             </h1>
+            <div className="text justify-content-center m-5">
             <p style={{border:'1px solid blacl'}}>Founded in 2025, SportWorld was born out of a passion for sports and a vision to make high-quality sporting goods accessible to everyone. We started with a simple goal—to provide athletes and sports enthusiasts with top-notch gear at affordable prices.
                 <br/>
             From the very beginning, our commitment has been to quality, customer satisfaction, and innovation. Whether you're a professional athlete, a fitness enthusiast, or just starting your sports journey, SportWorld is here to support you with premium products and exceptional service.
@@ -26,6 +27,7 @@ const AboutusPage = ()=>{
             <p>
             Join us on this journey and make every game count with SportWorld!
             </p>
+            </div>
 
             <div className="d-flex p-4">
             <div className="m-auto text-center">

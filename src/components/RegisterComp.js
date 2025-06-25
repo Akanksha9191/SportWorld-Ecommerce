@@ -1,7 +1,7 @@
 //images
 import ImageComp from "./ImageComp";
 import { use, useRef, useState } from "react";
-import axios from "axios";
+
 import { Link, useNavigate } from "react-router-dom";
 import { Image } from "react-bootstrap";
 // Icons
@@ -9,6 +9,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import LockIcon from '@mui/icons-material/Lock';
 import EmailIcon from '@mui/icons-material/Email';
 import '../components/RegisterComp.css'
+import { Post } from "./http.service";
 
 const RegisterComp = ()=>{
     const Nav = useNavigate()
@@ -28,8 +29,9 @@ const RegisterComp = ()=>{
     }
     const RegisterUserData = (event)=>{
         event.preventDefault()
-        axios
-        .post("http://localhost:8888/logindata", addUser)
+        // axios
+        // .post("http://localhost:8888/logindata", addUser)
+        Post(`http://localhost:8888/logindata/${addUser}`)
         .then(()=>{
             alert("Register Successfully Completed..!!")
             Nav("/")

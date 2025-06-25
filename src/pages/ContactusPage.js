@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import LogoComp from '../components/LogoComp';
 import NavbarComp from '../components/Navbar';
 import FooterComp from '../components/FooterComp';
+import { Link } from 'react-router-dom';
 
 const ContactUsPage = () => {
   const [formData, setFormData] = useState({
@@ -33,8 +34,8 @@ const ContactUsPage = () => {
     <NavbarComp/>
     <div className="p-4" style={{marginTop:'160px'}}>
         <h1 
-            className="text text-center m-2" 
-            style={{color:'darkblue', fontWeight:"bold"}}
+            className="text text-center m-2 fw-bold" 
+            style={{color:'darkblue'}}
         >
         Contact Us
         </h1>
@@ -117,9 +118,9 @@ const ContactUsPage = () => {
 
             <h2 className="text-xl font-semibold mt-4 mb-2 text-blue-900">Customer Service</h2>
             <p>Timing: 11.00 am – 6.00 pm</p>
-            <p>Phone: <a href="tel:+918896123123" className="text-blue-700">+91 88961 23123</a></p>
-            <p>Email: <a href="mailto:bakanksha346@gmail.com" className="text-blue-700">info@sportworldpune.com</a></p>
-            <p>Orders: <a href="mailto:bakanksha346@gmail.com" className="text-blue-700">orders@sportworldpune.com</a></p>
+            <p>Phone: <Link to="tel:+918896123123" className="text-blue-700">+91 88961 23123</Link></p>
+            <p>Email: <Link to="mailto:bakanksha346@gmail.com" className="text-blue-700">info@sportworldpune.com</Link></p>
+            <p>Orders: <Link to="mailto:bakanksha346@gmail.com" className="text-blue-700">orders@sportworldpune.com</Link></p>
           </div>
 
          

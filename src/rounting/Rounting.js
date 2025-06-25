@@ -9,19 +9,33 @@ import ContactusPage from "../pages/ContactusPage"
 import FootballPage from "../pages/allsports/FootballPage";
 import CartPage from "../pages/CartPage";
 import CricketPage from "../pages/allsports/CricketPage";
+import MenWomenShoesPage from "../pages/shoes/MenWomenShoesPage";
+import KidsShooesPage from "../pages/shoes/KidsShoesPage";
+import PageNotFound from "../pages/PageNotFound";
+import PrivateComp from "../components/PrivateComp";
+import HockeyPage from "../pages/allsports/HockeyPage";
+
 
 
  const Rounting = createBrowserRouter([
     {path:"", element:<LoginPage/>},
     {path:"register", element:<RegisterComp/>},
-    {path:"online-sports-store", element:<HomePage/>},
+    {path:"online-sports-store", element:<PrivateComp>
+      <HomePage/>
+    </PrivateComp>
+    },
     {path:"/aboutus", element:<AboutusPage/>},
     {path:"/cricket", element:<CricketPage/>},
     {path:"/cart", element:<CartComp/>},
     {path:'/enquiryform', element:<EnquiryFormComp/>},
     {path:'/addtocart/:title', element:<CartPage/>},
     {path:'/contactus', element:<ContactusPage/>},
-    {path:'/football', element:<FootballPage/>}
+    {path:'/football', element:<FootballPage/>},
+    {path:'/men-women-shoes', element:<MenWomenShoesPage/>},
+    {path:'/kids-shoes', element:<KidsShooesPage/>},
+    {path:'/hockey', element:<HockeyPage/>},
+
+    {path:'*', element:<PageNotFound/> }
     
     
     
