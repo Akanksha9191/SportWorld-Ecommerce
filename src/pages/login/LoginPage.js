@@ -39,10 +39,20 @@ const LoginPage = () =>{
         val.uname === userId && val.pass === userPass
       )
       if(currentData){
-        alert("Login Successfully..!")
+        window.alert("Login Successfully..!")
         sessionStorage.setItem("isLogin","true")
-        Navigate("/online-sports-store")
-      }else{
+        sessionStorage.setItem("uname", currentData.uname)  //store name
+        sessionStorage.setItem("role",currentData.role)   //store role
+        //Redirect based on role
+        if(currentData.role === "admin"){
+          Navigate("/sportworld-admin")
+        }
+        else{
+          Navigate("/")
+        }
+       
+      }
+      else{
         alert("Inalid credential")
         userInput.current.value = ""
         passInput.current.value = ""
