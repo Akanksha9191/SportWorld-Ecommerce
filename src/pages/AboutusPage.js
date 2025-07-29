@@ -60,7 +60,7 @@ const AboutusPage = ()=>{
 
             <div className="text text-center">
             <Link 
-            to={"/online-sports-store"}
+            to={"/"}
             style={{padding:'5px', background:'darkblue', color:'white', borderRadius:'10px', margin:"40px"}}
             >
                 Back to home

@@ -21,12 +21,12 @@ const NavbarComp = ()=>{
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
         <Nav
-            defaultActiveKey="/online-sports-store"
+            defaultActiveKey="/"
             className="mx-auto me-auto my-1 my-lg-0"
             
             navbarScroll
           >
-        <Nav.Link as={Link} to={"/online-sports-store"} className='text align-content-center link-light text-decoration-none px-3'>Home</Nav.Link>
+        <Nav.Link as={Link} to={"/"} className='text align-content-center link-light text-decoration-none px-3'>Home</Nav.Link>
 
         <Nav.Link as={Link} to={"/aboutus"} className='text link-light text-decoration-none px-3'>About us</Nav.Link>
 
@@ -50,7 +50,7 @@ const NavbarComp = ()=>{
 
         <NavDropdown id="navbarScrollingDropdown" title={<Link className='text link-light text-decoration-none '>Shoes</Link>} className='px-3' >
           <NavDropdown.Item as={Link} to={"/men-women-shoes"} className='text link-dark text-decoration-none'>Men/women </NavDropdown.Item>
-          <NavDropdown.Item as={Link} to={'/kids-shoes'}  className='text link-dark text-decoration-none'>Kids</NavDropdown.Item>
+          <NavDropdown.Item as={Link} to={"/kids-shoes"}  className='text link-dark text-decoration-none'>Kids</NavDropdown.Item>
         </NavDropdown>
 
         {/* <NavDropdown id="navbarScrollingDropdown" title={<Link className='text link-light text-decoration-none'>Top Brand</Link>} className='px-3' >

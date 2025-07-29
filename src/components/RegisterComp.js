@@ -19,6 +19,7 @@ const RegisterComp = ()=>{
         email:"",
         pass:"",
         cpass:"",
+        role:"user"
     })
     const inputChangeHandler =(event)=>{
         const {name, value} = event.target
@@ -27,11 +28,16 @@ const RegisterComp = ()=>{
             [name]:value
         })
     }
+
+
+
+
+    
     const RegisterUserData = (event)=>{
         event.preventDefault()
         // axios
         // .post("http://localhost:8888/logindata", addUser)
-        Post(`http://localhost:8888/logindata/${addUser}`)
+        Post("http://localhost:8888/logindata", addUser)
         .then(()=>{
             alert("Register Successfully Completed..!!")
             Nav("/")
@@ -64,6 +70,16 @@ const RegisterComp = ()=>{
               <input type="password" name="cpass" placeholder="CONFIRM PASSWORD"  className="RegisterInput" onChange={inputChangeHandler} required/>
                <LockIcon className="RegisterInput-icon"/>
               </div>
+              
+              {/* Role - user/admin */}
+              <div className="Input">
+                <select name="role" value={addUser.role} onChange={inputChangeHandler} className="RegisterInput">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+                </select>
+            </div>
+
+
                 <input type="submit" value={"Register"} className="Register-btn"/>
 
                 <p>Already have an Account

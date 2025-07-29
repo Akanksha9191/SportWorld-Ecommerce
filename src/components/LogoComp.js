@@ -10,13 +10,42 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-
+import { useEffect, useState } from 'react';
+import { useNavigate} from 'react-router-dom';
 import Marquee from "react-fast-marquee";
 import { Link } from 'react-router-dom';
 const LogoComp = ()=>{
+  // State for login status and username
+  const [isLogin, setIsLogin] = useState(false);
+  const [username, setUsername] = useState("");
+
+  const navigate = useNavigate();
+
+  // Check login status when component loads
+  useEffect(() => {
+    const loginStatus =
+      sessionStorage.getItem("isLogin") === "true" ||
+      localStorage.getItem("isLogin") === "true";
+
+    const uname =
+      sessionStorage.getItem("username") ||
+      localStorage.getItem("username");
+
+    setIsLogin(loginStatus);
+    setUsername(uname || "");
+  }, []);
+
+  // Logout function-> clears session and redirects
+  const handleLogout = () => {
+    sessionStorage.clear();
+    localStorage.clear();
+    setIsLogin(false);
+    alert("Logged out successfully.");
+    navigate("/");
+  };
     return(
         <div>
-            <div className='fixed-top'>
+            <div className='fixed-top' style={{ zIndex: 1050, width: '100%' }}> 
           {/* React fast Marquee  */}
         <Marquee 
         style={{color:'white', 
@@ -56,6 +85,7 @@ const LogoComp = ()=>{
                 style={{ maxHeight: '100px' }}
                 navbarScroll
               />
+              {/* searchbar */}
               <Form className="d-flex me-auto">
                 <Form.Control
                   type="search"
@@ -73,8 +103,34 @@ const LogoComp = ()=>{
           </Nav>
         {/* Account , add cart */}
           <Nav className="">
-            <Nav.Item as={Link} to={"/"} className='link-dark'><AccountBoxIcon className="fs-1" />
-            </Nav.Item>
+            {/* <Nav.Item as={Link} to={"/login"} className='link-dark'><AccountBoxIcon className="fs-1" />
+            </Nav.Item> */}
+            <NavDropdown
+                            title={
+                              <span className="link-dark">
+                                <AccountBoxIcon className="fs-1" />
+                              </span>
+                            }
+                            id="user-dropdown"
+                            align="end"
+                          >
+                            {/* If logged in-> show username and logout */}
+                            {isLogin ? (
+                              <>
+                                <NavDropdown.Item disabled className="text-dark fw-bold">
+                                  Welcome to SportWorld!!{username}
+                                </NavDropdown.Item>
+                                <NavDropdown.Item onClick={handleLogout} className="text-danger">
+                                  Logout
+                                </NavDropdown.Item>
+                              </>
+                            ) : (
+                              // show login option
+                              <NavDropdown.Item as={Link} to="/login">
+                                Login
+                              </NavDropdown.Item>
+                            )}
+            </NavDropdown>
             <Nav.Item as={Link} to={'/cart'} className='link-dark mx-2'><ShoppingCartIcon className="fs-1" /></Nav.Item>
           </Nav>
             </Navbar.Collapse>

@@ -64,7 +64,7 @@ const KidsShooesPage = ()=>{
                             flexDirection:'column',
                             justifyContent:'space-between',
                             textAlign:'center'}}>
-                            <Card.Img variant="top" style={{padding:"10px", width:'70%', margin:'auto', height:'200px'}} src={kidshoes_items.url} />
+                            <Card.Img variant="top" style={{padding:"10px", width:'70%', margin:'auto', height:'200px'}} src={kidshoes_items.image} />
                             <Card.Body>
                                 <Card.Title>{kidshoes_items.title}</Card.Title>
                                 <Card.Text>

@@ -60,7 +60,7 @@ const MenWomenShoesPage=()=>{
                             flexDirection:'column',
                             justifyContent:'space-between',
                             textAlign:'center'}}>
-                            <Card.Img variant="top" style={{padding:"10px", width:'70%', margin:'auto', height:'200px'}} src={menshoes_items.url} />
+                            <Card.Img variant="top" style={{padding:"10px", width:'70%', margin:'auto', height:'200px'}} src={menshoes_items.image} />
                             <Card.Body>
                                 <Card.Title>{menshoes_items.title}</Card.Title>
                                 <Card.Text>

@@ -41,6 +41,12 @@ const HockeyPage = ()=>{
         })
     }
 
+        const buyNow = (product)=>{
+            console.log("Buying Product", product)
+            window.alert(`Proceeding to buy: ${product.title}`)
+
+        }
+
     return(
         <div>
             
@@ -52,7 +58,7 @@ const HockeyPage = ()=>{
             className="text text-center fw-bold m-2" 
             style={{color:'darkblue'}}
             >
-                Football
+                Hockey
             </h1>
             </div>
             
@@ -60,24 +66,32 @@ const HockeyPage = ()=>{
              <Row xs={1} md={4} className="g-4 mb-4">
                 {footballdata.map((hockey_items, idx) => (
                     <Col key={idx}>
-                        <Card style={{ height:'100%',
+                        <Card 
+                        className="h-100 d-flex flex-column shadow-sm"
+                        style={{ height:'100%',
                             display:'flex',
                             flexDirection:'column',
                             justifyContent:'space-between',
                             textAlign:'center'}}>
-                            <Card.Img variant="top" style={{padding:"10px", width:'70%', margin:'auto', height:'200px'}} src={hockey_items.url} />
-                            <Card.Body>
+                            <Card.Img variant="top" style={{padding:"10px", width:'70%', objectFit:'contain', margin:'auto', height:'200px'}} src={hockey_items.image} />
+                            <Card.Body className="d-flex flex-column justify-content-between flex-grow-1">
                                 <Card.Title>{hockey_items.title}</Card.Title>
                                 <Card.Text>
                                     {hockey_items.description}
                                 </Card.Text>
                                 <Card.Title>₹{hockey_items.price}</Card.Title>
-                                <Button variant="dark" 
-                                className="mt-auto"
+                                <Button variant="outline-dark" 
+                               className="mt-1 w-100 border-2"
                                 onClick={()=>addToCart(hockey_items)} 
                                 >Add to Cart</Button>
+                                {/* Buy button */}
+                                <Button variant="outline-danger" 
+                                className="mt-1 w-100 border-2"
+                                onClick={()=>buyNow(hockey_items)} 
+                                >Buy Now</Button>
+
                             </Card.Body>
-                        </Card>
+                        </Card>                   
                     </Col>
                 ))}
             </Row>

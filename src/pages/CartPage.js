@@ -3,13 +3,14 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import RestoreFromTrashIcon from "@mui/icons-material/RestoreFromTrash";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import { Delete, Get } from "../components/http.service";
+import { Link } from "react-router-dom";
 
 
 
 const CartPage = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
   const [cricketdata, setcricket] = useState([]);
 
   const [quantity, setQuantity] = useState({});
@@ -170,7 +171,14 @@ const CartPage = () => {
           Proceed to Payment
         </Button>
       </div>
-
+      <div className="text text-center">
+            <Link 
+            to={"/"}
+            style={{padding:'5px', background:'darkblue', color:'white', borderRadius:'10px', margin:"40px"}}
+            >
+                Back to Shopping
+            </Link>
+      </div>
 
     </div>
   );

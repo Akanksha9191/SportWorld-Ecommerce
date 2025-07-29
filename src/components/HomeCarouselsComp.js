@@ -10,6 +10,7 @@ const HomeCarouselsComp = ()=>{
   };
     return(
         <div className='' style={{marginTop:'170px'}}>
+          {/* image scroller */}
             <Carousel activeIndex={index} onSelect={handleSelect} style={{width:"100%"}}>
       <Carousel.Item>
         <Image src={ImageComp.CarouselImg2} height={"450px"} width={'100%'}/>

@@ -40,6 +40,11 @@ const FootballPage = ()=>{
             console.log("Failed to add/update product in cart.", error);
         })
     }
+    const buyNow = (product)=>{
+            console.log("Buying Product", product)
+            window.alert(`Proceeding to buy: ${product.title}`)
+
+        }
 
     return(
         <div>
@@ -60,22 +65,30 @@ const FootballPage = ()=>{
              <Row xs={1} md={4} className="g-4 mb-4">
                 {footballdata.map((footballitems, idx) => (
                     <Col key={idx}>
-                        <Card style={{ height:'100%',
+                    <Card 
+                        className="h-100 d-flex flex-column shadow-sm"
+                        style={{ height:'100%',
                             display:'flex',
                             flexDirection:'column',
                             justifyContent:'space-between',
                             textAlign:'center'}}>
-                            <Card.Img variant="top" style={{padding:"10px", width:'70%', margin:'auto', height:'200px'}} src={footballitems.url} />
-                            <Card.Body>
+                            <Card.Img variant="top" style={{padding:"10px", width:'70%', objectFit:'contain', margin:'auto', height:'200px'}} src={footballitems.image} />
+                            <Card.Body className="d-flex flex-column justify-content-between flex-grow-1">
                                 <Card.Title>{footballitems.title}</Card.Title>
                                 <Card.Text>
                                     {footballitems.description}
                                 </Card.Text>
                                 <Card.Title>₹{footballitems.price}</Card.Title>
-                                <Button variant="dark" 
-                                className="mt-auto"
+                                <Button variant="outline-dark" 
+                               className="mt-1 w-100 border-2"
                                 onClick={()=>addToCart(footballitems)} 
                                 >Add to Cart</Button>
+                                {/* Buy button */}
+                                <Button variant="outline-danger" 
+                                className="mt-1 w-100 border-2"
+                                onClick={()=>buyNow(footballitems)} 
+                                >Buy Now</Button>
+
                             </Card.Body>
                         </Card>
                     </Col>

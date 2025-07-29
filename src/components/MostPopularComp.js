@@ -33,31 +33,47 @@ const MostPopularComp = ()=>{
             console.log("Failed to add/update product in cart.", error);
         })
     }
+
+        const buyNow = (product)=>{
+            console.log("Buying Product", product)
+            window.alert(`Proceeding to buy: ${product.title}`)
+
+        }
+
+
     return(
         <div style={{marginTop:'auto'}}>
-
+{/* most popular product */}
             <h5 style={{color:'darkblue', margin:'20px'}}>Most Popular</h5>
 
           <div className="p-3">
              <Row xs={1} md={4} className="g-4 mb-4">
                 {populartdata.map((popular_items, idx) => (
                     <Col key={idx}>
-                        <Card style={{ height:'100%',
+                        <Card 
+                        className="h-100 d-flex flex-column shadow-sm"
+                        style={{ height:'100%',
                             display:'flex',
                             flexDirection:'column',
                             justifyContent:'space-between',
                             textAlign:'center'}}>
-                            <Card.Img variant="top" style={{padding:"10px", width:'70%', margin:'auto', height:'200px'}} src={popular_items.url} />
-                            <Card.Body>
+                            <Card.Img variant="top" style={{padding:"10px", width:'70%', objectFit:'contain', margin:'auto', height:'200px'}} src={popular_items.image} />
+                            <Card.Body className="d-flex flex-column justify-content-between flex-grow-1">
                                 <Card.Title>{popular_items.title}</Card.Title>
                                 <Card.Text>
                                     {popular_items.description}
                                 </Card.Text>
                                 <Card.Title>₹{popular_items.price}</Card.Title>
                                 <Button variant="dark" 
-                                className="mt-auto"
+                                className="mt-1 w-100 border-2"
                                 onClick={()=>addToCart(popular_items)} 
                                 >Add to Cart</Button>
+                                {/* Buy button */}
+                                <Button variant="outline-danger" 
+                                className="mt-1 w-100 border-2"
+                                onClick={()=>buyNow(popular_items)} 
+                                >Buy Now</Button>
+
                             </Card.Body>
                         </Card>
                     </Col>

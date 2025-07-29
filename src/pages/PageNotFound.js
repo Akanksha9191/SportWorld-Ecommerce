@@ -16,7 +16,7 @@ const PageNotFound = () => {
       <p>
         Don’t worry – the game’s still on. Head back to the home ground and continue shopping for your favorite sports gear.
       </p>
-      <Link to="/online-sports-store">
+      <Link to="/">
         <Button variant="dark">🏠 Back to Home</Button>
       </Link>
     </div>
