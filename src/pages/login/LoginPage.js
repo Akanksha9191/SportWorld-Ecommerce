@@ -1,91 +1,128 @@
-//images
-import ImageComp from "../../components/ImageComp";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Image } from "react-bootstrap";
-// Icons
-import PersonIcon from '@mui/icons-material/Person';
-import LockIcon from '@mui/icons-material/Lock';
-//apply css
-import '../login/LoginPage.css'
+import {
+  Box,
+  Button,
+  Typography,
+  FormControl,
+  InputLabel,
+  OutlinedInput,
+  FormHelperText,
+} from "@mui/material";
+
 import { Get } from "../../components/http.service";
+import ImageComp from "../../components/ImageComp";
 
-const LoginPage = () =>{
-  const Navigate = useNavigate()
-    const userInput = useRef()
-    const passInput = useRef()
+import "../login/LoginPage.css";
 
-    const [user, setuser] = useState([])
-    useState(()=>{
-      Get(`http://localhost:8888/logindata`)
-      .then((res)=>{
-        console.log(res.data)
-        setuser(res.data)
+const LoginPage = () => {
+  const navigate = useNavigate();
+  const userInput = useRef();
+  const passInput = useRef();
+
+  const [users, setUsers] = useState([]);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    Get("http://localhost:8888/logindata")
+      .then((res) => {
+        setUsers(res.data);
       })
-      .catch((error)=>{
-        console.log(error)
-      })
-    })
+      .catch((error) => {
+        console.error("Failed to fetch users:", error);
+      });
+  }, []);
 
-    const submitData =(event)=>{
-      event.preventDefault()
+  const submitData = (e) => {
+    e.preventDefault();
+    const username = userInput.current.value.trim();
+    const password = passInput.current.value;
 
-      const userId = userInput.current.value
-      const userPass = passInput.current.value
+    const currentUser = users.find(
+      (user) => user.uname === username && user.pass === password
+    );
 
-      console.log("userName:", userId)
-      console.log("Pass:" , userPass)
-      const currentData = user.find((val)=>
-        val.uname === userId && val.pass === userPass
-      )
-      if(currentData){
-        window.alert("Login Successfully..!")
-        sessionStorage.setItem("isLogin","true")
-        sessionStorage.setItem("uname", currentData.uname)  //store name
-        sessionStorage.setItem("role",currentData.role)   //store role
-        //Redirect based on role
-        if(currentData.role === "admin"){
-          Navigate("/sportworld-admin")
-        }
-        else{
-          Navigate("/")
-        }
-       
-      }
-      else{
-        alert("Inalid credential")
-        userInput.current.value = ""
-        passInput.current.value = ""
+    if (currentUser) {
+      sessionStorage.setItem("isLogin", "true");
+      sessionStorage.setItem("uname", currentUser.uname);
+      sessionStorage.setItem("role", currentUser.role);
 
-      }
+      alert("Login Successful!");
+
+      currentUser.role === "admin"
+        ? navigate("/sportworld-admin")
+        : navigate("/");
+    } else {
+      setError("Invalid credentials");
+      userInput.current.value = "";
+      passInput.current.value = "";
     }
-    return(
-        <div className="Login-container">
-           <div className="LoginImg">
-             {/* Add image in login page */}
-             <img src={ImageComp.LoginFootball} alt="Login" className="LoginImg-style"/>
-           </div>
-           {/* Login form */}
-           <div className="LoginForm">
-              <form onSubmit={(event)=>submitData(event)}>
-              <h2>Login</h2>
-              <div className="Input">
-              <input type="name" name="uname" placeholder="USERNAME" ref={userInput}  className="LoginInput" required/> 
-              <PersonIcon className="LoginInput-icon" />
-              </div>
-              <div className="Input">
-              <input type="password" name="pass" placeholder="PASSWORD" ref={passInput}  className="LoginInput" required/>
-              <LockIcon className="LoginInput-icon"/>
-              </div>
-                <input type="submit" value={"Login"} className="login-btn"/>
+  };
 
-                <p>Don't have an Account
-                  {" "}
-                  <Link to={"register"}>Register</Link>
-                </p>
-              </form>
-           </div>
-        </div>
-    )
-}
+  return (
+    <div className="Login-container">
+      {/* Left side image */}
+      <div className="LoginImg">
+        <img
+          src={ImageComp.LoginFootball}
+          alt="Login"
+          className="LoginImg-style"
+        />
+      </div>
+
+      {/* Right side login form using MUI */}
+      <Box
+        className="LoginForm"
+        component="form"
+        onSubmit={submitData}
+        sx={{
+          width: 400,
+          p: 3,
+          border: "1px solid #ccc",
+          borderRadius: 2,
+        }}
+      >
+        <Typography variant="h5" gutterBottom align="center">
+          Login
+        </Typography>
+
+        <FormControl fullWidth margin="normal" error={!!error}>
+          <InputLabel>Username</InputLabel>
+          <OutlinedInput
+            inputRef={userInput}
+            name="uname"
+            label="Username"
+            required
+          />
+        </FormControl>
+
+        <FormControl fullWidth margin="normal" error={!!error}>
+          <InputLabel>Password</InputLabel>
+          <OutlinedInput
+            inputRef={passInput}
+            name="pass"
+            type="password"
+            label="Password"
+            required
+          />
+          {error && <FormHelperText>{error}</FormHelperText>}
+        </FormControl>
+
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          sx={{ mt: 2, backgroundColor: "darkblue" }}
+        >
+          Login
+        </Button>
+
+        <Typography sx={{ mt: 2 }} variant="body2" align="center">
+          Don&apos;t have an account? <Link to="/register">Register</Link>
+        </Typography>
+      </Box>
+    </div>
+  );
+};
+
 export default LoginPage;
