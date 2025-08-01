@@ -1,28 +1,52 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import ImageComp from './ImageComp';
 import Image from 'react-bootstrap/Image';
-const HomeCarouselsComp = ()=>{
-    const [index, setIndex] = useState(0);
+import { Get } from './http.service';
+
+const HomeCarouselsComp = () => {
+  const [index, setIndex] = useState(0);
+  const [image, setimage]= useState([])
 
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
-    return(
-        <div className='' style={{marginTop:'170px'}}>
-          {/* image scroller */}
-            <Carousel activeIndex={index} onSelect={handleSelect} style={{width:"100%"}}>
-      <Carousel.Item>
-        <Image src={ImageComp.CarouselImg2} height={"450px"} width={'100%'}/>
-      </Carousel.Item>
-      <Carousel.Item>
-       <Image src={ImageComp.CarouselImg1} height={"450px"} width={'100%'}/>
-      </Carousel.Item>
-      <Carousel.Item>
-      <Image src={ImageComp.CarouselImg3} height={"450px"} width={'100%'}/>
-      </Carousel.Item>
-    </Carousel>
-        </div>
-    )
-}
+  useEffect(()=>{
+    FetchData()
+  },[])
+
+  const FetchData= ()=>{
+    Get(`http://localhost:8888/homecarousels`)
+    .then((res)=>{
+        setimage(res.data)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+  }
+
+  return (
+    <div className="pt-5" style={{marginTop:"95px"}}>
+      <Carousel
+        activeIndex={index}
+        onSelect={handleSelect}
+        className="w-100"
+        interval={3000}
+        fade
+      >
+        {image.map((img, index)=>
+        (        <Carousel.Item>
+          <Image
+            src={img.image}
+            alt="Slide 1"
+            fluid
+            className="d-block w-100"
+            style={{ height: '450px'}}
+          />
+        </Carousel.Item>)
+        )}
+      </Carousel>
+    </div>
+  );
+};
+
 export default HomeCarouselsComp;
